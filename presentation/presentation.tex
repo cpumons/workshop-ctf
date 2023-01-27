@@ -77,13 +77,16 @@
 }
 
 \usepackage{graphicx} % Allows including images
-\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables$
+\usepackage[french]{babel}
+\usepackage{comment}
+\usepackage{pdfpages}
 
 %------------------------------------------------
 %	TITLE PAGE
 %------------------------------------------------
 
-\title[Capture The Flag]{Découverte de la cybersécurité via les Capture The Flag (CTF)} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[Capture The Flag]{Introduction à la cybersécurité via les Capture The Flag (CTF)} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Ugo Proietti et François Vion} % Your name
 \institute[UMONS] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
@@ -91,7 +94,7 @@
 Universtité de Mons \\ % Your institution for the title page
 \medskip
 }
-\date{\today} % Date, can be changed to a custom date
+\date[]{16 février 2022} % Date, can be changed to a custom date
 
 \begin{document}
 
@@ -112,15 +115,19 @@ Universtité de Mons \\ % Your institution for the title page
 \section{Qu'est-ce qu'un CTF ?} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
 %------------------------------------------------
 
-\begin{frame}\frametitle{Principe}
+\begin{frame}
+\frametitle{Principe}
 
-Les Capture The Flag sont des compétitions durant lesquelles vous allez devoir trouver des flags. Ils suivent un format standard en fonction de l'évènement \{CPU69420\}. \\
-Chaque flag rapporte un certain nombre de points. \\~\\
+Les Capture The Flag sont des compétitions durant lesquelles il faut trouver des flags dans des fichies, sites, applications, etc. Les flags sont des chaines de caractère qui suivent un format standard en fonction de l'évènement. Par exemple : \{CPU69420\}. \\~\\
 
-Il existe un grand nombre de catégories ayant chacune leurs caractéristiques, nous allons vous présenter les plus connues.
+Chaque flag rapporte un certain nombre de points en fonction de sa difficulté. \\~\\
+
+Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. Nous allons vous présenter les plus connues.
 
 \end{frame}
 
+%------------------------------------------------
+\section{Les différents domaines de CTF}
 %------------------------------------------------
 
 \begin{frame}\frametitle{Catégories}
@@ -129,6 +136,7 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques, 
     \item Stéganographie
     \item Cryptographie
     \item Web
+    \item Programmation
     \item Réseau
     \item Forensic
     \item Reverse Engineering
@@ -141,23 +149,31 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques, 
 \begin{frame}
 \frametitle{Stéganographie}
 
-La Stéganographie est l’art de la dissimulation. Il s’agit en général de cacher une information là où on ne s’y attend pas. \\~\\
-
-\begin{block}{Exemples}
-    Cacher un message dans un fichier audio \\
-    Message écrit en très petit sur une image \\
-    Cacher une image dans une autre image
+\begin{block}{Explication}
+    La Stéganographie est l’art de la dissimulation. Il s’agit en général de cacher une information là où on ne s’y attend pas.
 \end{block}
 
-\begin{block}{Comptétences utiles}
-    Observation \\
-    Utilisation de scripts \\
-    Réflexion
-\end{block}
+\pause
 
-\begin{block}{Difficulté}
-    $1/5$
-\end{block}
+\textbf{Exemples}
+\begin{itemize}
+    \item Cacher un message dans un fichier audio
+    \item Cacher une message sur une image
+    \item Cacher une image dans une autre image
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Observation \\
+    \item Utilisation de scripts \\
+    \item Connaissance des divers formats de fichier
+\end{itemize}
+
+\pause
+
+\textbf{Difficulté} : 1/5
 
 \end{frame}
 
@@ -166,20 +182,28 @@ La Stéganographie est l’art de la dissimulation. Il s’agit en général de 
 \begin{frame}
 \frametitle{Cryptographie}
 
-Contrairement à la stéganographie, la cryptographie n'essaie pas de cacher un message. Elle se contente de le rendre illisible par toute personne n'ayant pas la clé pour le déchiffrer.
-
-\begin{block}{Exemples}
-    Cryptage d'un message 
+\begin{block}{Explication}
+    La cryptographie est l'art de rendre un message illisible pour toute personne n'ayant pas la clé pour le déchiffrer. Elle est différente de la stéganographie qui consiste simplement a faire passer un message inaperçu.
 \end{block}
 
-\begin{block}{Compétences}
-    Connaissance de divers formats d'encodage \\
-    Mathématiques pour craquer un code
-\end{block}
+\pause
 
-\begin{block}{Difficulté}
-    $2/5$
-\end{block}
+\textbf{Exemples}
+\begin{itemize}
+    \item Cryptage et décryptage d'un message 
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Connaissance de divers formats d'encodage
+    \item Connaissance de divers méthodes de cryptage et de décryptage
+\end{itemize}
+
+\pause
+
+\textbf{Difficulté} : 2/5
 
 \end{frame}
 
@@ -188,22 +212,61 @@ Contrairement à la stéganographie, la cryptographie n'essaie pas de cacher un 
 \begin{frame}
 \frametitle{Web}
 
-Un site web peut cacher un mot de passe, un fichier ou une faille permettant de s'y connecter sans autorisation.
 
-\begin{block}{Exemples}
-    Un flag peut être caché dans le code HTML \\
-    Un lien vers une ressource cachée \\
-    Un faille de sécurité dans un système de connexion
+\begin{block}{Explication}
+    Un site web peut contenir un mot de passe, un fichier ou une faille permettant de s'y connecter sans autorisation.
 \end{block}
 
-\begin{block}{Compétences}
-    HTML, JavaScript, PHP \\
-    Structure d'un site web
+\pause
+
+\textbf{Exemples}
+\begin{itemize}
+    \item Un message caché dans le code HTML
+    \item Un lien sur le site qui mène à une ressource cachée
+    \item Un faille de sécurité dans un système de connexion
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Connaissance d'HTML, JavaScript et PHP
+    \item Connaissance de la structure d'un site web
+\end{itemize}
+
+\pause
+
+\textbf{Difficulté} : 2/5
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Programmation}
+
+\begin{block}{Explication}
+    On peut trouver des flags dans un programme en comprenant son fonctionnement et en exploitant les failles de celui-ci.
 \end{block}
 
-\begin{block}{Difficulté}
-    $2/5$
-\end{block}
+\pause
+
+\textbf{Exemples}
+\begin{itemize}
+    \item Faille dans la méthode input() de Python 2
+    \item Contournement du mot de passe d'une application Android
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Maitrise de divers languages de programmation
+\end{itemize}
+
+\pause
+
+\textbf{Difficulté} : 3/5
 
 \end{frame}
 
@@ -212,20 +275,28 @@ Un site web peut cacher un mot de passe, un fichier ou une faille permettant de 
 \begin{frame}
 \frametitle{Réseau}
 
-Surveiller un réseau peut révéler des informations concernant les clients connectés et les données qui y sont échangées. \\
-On peut imaginer récupérer des indentifiants de connexion en interceptant ce qui transite sur le réseau. 
-
-\begin{block}{Exemples}
-    Lire le contenu des paquets envoyés depuis un PC \\
+\begin{block}{Explication}
+    Surveiller un réseau peut révéler des informations concernant les clients connectés et les données qui y sont échangées.
 \end{block}
 
-\begin{block}{Compétences}
+\pause
 
-\end{block}
+\textbf{Exemple}
+\begin{itemize}
+    \item Récupérer des identifiants de connexion en interceptant les paquets
+\end{itemize}
 
-\begin{block}{Difficulté}
-    $4/5$
-\end{block}
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Maitriser un analyseur de réseau
+    \item Connaitre les protocoles réseaux les plus communs
+\end{itemize}
+
+\pause
+
+\textbf{Difficulté} : 4/5
 
 \end{frame}
 
@@ -234,17 +305,30 @@ On peut imaginer récupérer des indentifiants de connexion en interceptant ce q
 \begin{frame}
 \frametitle{Forensic}
 
-Une machine peut contenir des informations critiques qui sont récupérables en exploitant la mémoire, le stockage ou des logs générés par le système d'exploitation. \\
-La mémoire peut contenir des mots de passe utilisés par l'OS ou des tokens de connexion utilisés par le navigateur web.
-
-\begin{block}{Exemples}
+\begin{block}{Explication}
+    L'analyse forensic consiste a retrouver des infomations sur une machine qui a subit un accident. 
 \end{block}
 
-\begin{block}{Compétences}
-\end{block}
+\pause
 
-\begin{block}{Difficulté}
-\end{block}
+\textbf{Exemples}
+\begin{itemize}
+    \item Analyse de la mémoire qui peut contenir des mots de passe utilisés par l'OS ou des tokens de connexion utilisés par le navigateur web.
+    \item Analyse des logs générés par l'OS
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Maitrise de divers formats d'encodage
+    \item Maitrise de manipulation de bits
+    \item Utilisation d'un language de script (e.g. Python)
+\end{itemize}
+
+\pause
+
+\textbf{Difficulté} : 4/5
 
 \end{frame}
 
@@ -253,20 +337,35 @@ La mémoire peut contenir des mots de passe utilisés par l'OS ou des tokens de 
 \begin{frame}
 \frametitle{Reverse Engineering}
 
-Un fichier exécutable peut être analysé pour comprendre son fonctionnement et en tirer des informations.
-
-\begin{block}{Exemples}
+\begin{block}{Explication}
+    Le reverse engineering est le fait de décompiler un programme pour pouvoir voir son fonctionnement interne.
 \end{block}
 
-\begin{block}{Compétences}
-\end{block}
+\pause
 
-\begin{block}{Difficulté}
-\end{block}
+\textbf{Exemples}
+\begin{itemize}
+    \item Analyse du fonctionnement interne d'un programme pour en tirer des informations
+    \item Modification du code source d'un programme
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Maitrise de language machine et assembleur (C, x86, etc)
+    \item Utilisation de décompilateurs
+\end{itemize}
+
+\pause
+
+\textbf{Difficulté} : 5/5
 
 \end{frame}
 
 %------------------------------------------------
+
+\begin{comment}
 
 \begin{frame}
 \frametitle{Blocks of Highlighted Text}
@@ -303,9 +402,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ul
 \end{columns}
 \end{frame}
 
-%------------------------------------------------
-\section{Aperçu du fonctionnement}
-%------------------------------------------------
 
 \begin{frame}
 \frametitle{Table}
@@ -366,27 +462,82 @@ An example of the \verb|\cite| command to cite within the presentation:\\~
 This statement requires citation \cite{p1}.
 \end{frame}
 
+\end{comment}
+
 %------------------------------------------------
 
-\section{Plateformes}
+\section{Mise en pratique}
+
+\begin{frame}\frametitle{Mise en pratique}
+
+Essayez de trouver les flags dans les fichiers du drive ! \\~\\
+
+Le lien : shorturl.at/lvzD3 \\~\\
+
+Les flags suivent le format <CPU...> \\~\\
+
+Conseil : Faites des recherches internet
+
+
+\end{frame}
+
+
+%------------------------------------------------
+
+%------------------------------------------------
+
+\section{Plateformes et évènements}
 
 \begin{frame}\frametitle{Plateformes}
     \begin{itemize}
         \item root-me.org
         \item overthewire.org
         \item hackthebox.com
-        \item CyberSecurityChallengeBElgium(CSCBE)
+        \item ctftime.org
     \end{itemize}
 \end{frame}
 
 
 %------------------------------------------------
 
-\section{Mise en pratique}
 \begin{frame}
-\frametitle{Mise en pratique}
+\frametitle{Évènement}
+\begin{center}
+    \includegraphics[scale=1.5]{CSCBE.jpg}
+\end{center}
 
-    C'est votre tour ! Créez un comte sur root-me.org et essayez les exercices faciles
+\begin{itemize}
+    \item Compétition CTF inter-écoles belges\\
+    \item Par équipe de 4 (de la même école)\\
+    \item Du 10 au 11 mars 2022
+    \item Finales du 25 au 26 mars 2022
+\end{itemize}
+
+    
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=}
+\includepdf[pages=1]{CSCBE5-6.pdf}
+\includepdf[pages=2]{CSCBE5-6.pdf}
+}
+%------------------------------------------------
+\section{Conseils généraux}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Conseils généraux}
+
+\begin{itemize}
+    \item Utilisez Linux (VM ou installation complète)
+    \pause
+    \item Perséverez et faites beaucoup de recherches
+    \pause
+    \item Avoir des connaissances générales dans tout les domaines de l'informatique (être polyvalent)
+    \pause
+    \item Prendre note des solutions des ctf qui pourront sans doute servir plus tard
+\end{itemize}
+
 
 \end{frame}
 
