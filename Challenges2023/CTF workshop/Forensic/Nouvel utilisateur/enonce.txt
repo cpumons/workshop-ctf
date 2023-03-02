@@ -1,0 +1,4 @@
+Après avoir créé un dossier mystérieux, le stagiaire a maintenant créé un utilisateur sur notre ordinateur linux (fedora btw). Il faut qu'on récupère son mot de passe avant qu'il ne fasse d'autre choses suspectes ! Nous avons récupéré l'image disque de l'ordinateur commun.
+(Le flag est le mot de passe en clair format <CPUmotdepasse>)
+
+Si le fichier vous intéresse (3Go) contactez moi (210809@umons.ac.be)
