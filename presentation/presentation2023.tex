@@ -1,0 +1,644 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------
+%	PACKAGES AND THEMES
+%------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables$
+\usepackage[french]{babel}
+\usepackage{comment}
+\usepackage{pdfpages}
+\usepackage{multicol}
+
+%------------------------------------------------
+%	TITLE PAGE
+%------------------------------------------------
+
+\title[Capture The Flag]{Introduction à la cybersécurité via les Capture The Flag (CTF)} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Ugo Proietti et François Vion} % Your name
+\institute[UMONS] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Universtité de Mons \\ % Your institution for the title page
+\medskip
+}
+\date[]{28 février 2023} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%------------------------------------------------
+%	PRESENTATION SLIDES
+%------------------------------------------------
+
+%------------------------------------------------
+\section{Qu'est-ce qu'un CTF ?} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Principe}
+
+Les Capture The Flag sont des compétitions durant lesquelles il faut trouver des flags dans des fichiers, sites, applications, etc. Les flags sont des chaines de caractère qui suivent un format standard en fonction de l'évènement. Par exemple : $<$CPU69420$>$. \\~\\
+
+Chaque flag rapporte un certain nombre de points en fonction de sa difficulté. \\~\\
+
+Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. Nous allons vous présenter les plus connues.
+
+\end{frame}
+
+%------------------------------------------------
+\section{Les différents domaines de CTF}
+%------------------------------------------------
+
+\begin{frame}\frametitle{Catégories}
+
+\begin{itemize}
+    \item Stéganographie
+    \item Cryptographie
+    \item Web
+    \item Programmation
+    \item Réseau
+    \item Forensic
+    \item Reverse Engineering
+    \item OSInt
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Stéganographie}
+
+\begin{block}{Explication}
+    La Stéganographie est l’art de la dissimulation. Il s’agit en général de cacher une information là où on ne s’y attend pas.
+\end{block}
+
+\pause
+
+\textbf{Exemples}
+\begin{itemize}
+    \item Cacher un message dans un fichier audio
+    \item Cacher un message sur une image
+    \item Cacher une image dans une autre image
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Observation \\
+    \item Utilisation de scripts et d'outils\\
+    \item Connaissance des divers formats de fichier
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Cryptographie}
+
+\begin{block}{Explication}
+    La cryptographie est l'art de rendre un message illisible pour toute personne n'ayant pas la clé pour le déchiffrer. Elle est différente de la stéganographie qui consiste simplement a faire passer un message inaperçu.
+\end{block}
+
+\pause
+
+\textbf{Exemples}
+\begin{itemize}
+    \item Cryptage et décryptage d'un message 
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Connaissance de divers formats d'encodage
+    \item Connaissance de divers méthodes de cryptage et de décryptage
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Web}
+
+
+\begin{block}{Explication}
+    Un site web mal codé peut contenir des failles de sécurité ou des informations sensibles visible de tous.
+\end{block}
+
+\pause
+
+\textbf{Exemples}
+\begin{itemize}
+    \item Un message caché dans le code HTML
+    \item Un lien sur le site qui mène à une ressource cachée
+    \item Un faille de sécurité dans un système de connexion
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Connaissance d'HTML, JavaScript et PHP
+    \item Connaissance de la structure d'un site web
+\end{itemize}
+
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Programmation}
+
+\begin{block}{Explication}
+    Comme un site web, un programme peut contenir des failles de sécurité permettant d'exploiter le contenu de celui-ci.
+\end{block}
+
+\pause
+
+\textbf{Exemples}
+\begin{itemize}
+    \item Faille dans la méthode input() de Python 2
+    \item Contournement du mot de passe d'une application Android
+    \item Problème de programmation "standard"
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Maitrise de divers languages de programmation
+\end{itemize}
+
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Réseau}
+
+\begin{block}{Explication}
+    Surveiller un réseau peut révéler des informations concernant les clients connectés et les données qui y sont échangées.
+\end{block}
+
+\pause
+
+\textbf{Exemple}
+\begin{itemize}
+    \item Récupérer des identifiants de connexion en interceptant les paquets
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Maitriser un analyseur de réseau
+    \item Connaitre les protocoles réseaux les plus communs
+\end{itemize}
+
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Forensic}
+
+\begin{block}{Explication}
+    L'analyse forensic consiste a retrouver des infomations sur une machine qui a subit un accident. 
+\end{block}
+
+\pause
+
+\textbf{Exemples}
+\begin{itemize}
+    \item Analyse de la mémoire qui peut contenir des mots de passe utilisés par l'OS ou des tokens de connexion utilisés par le navigateur web.
+    \item Analyse des logs générés par l'OS
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Maitrise de divers formats d'encodage
+    \item Utilisation d'un outil d'analyse forensic
+    \item Connaissance de la structure de fichier d'un système
+\end{itemize}
+
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Reverse Engineering}
+
+\begin{block}{Explication}
+    Le reverse engineering est le fait de décompiler un programme pour pouvoir voir son fonctionnement interne.
+\end{block}
+
+\pause
+
+\textbf{Exemples}
+\begin{itemize}
+    \item Analyse du fonctionnement interne d'un programme pour en tirer des informations
+    \item Modification du code source d'un programme
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Maitrise de language machine et assembleur (C, x86, etc)
+    \item Utilisation de décompilateurs
+\end{itemize}
+
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{OSInt}
+
+\begin{block}{Explication}
+    L'open source intelligence est le fait de récolter des informations publiques sur un individu ou une chose et d'en déduire des informations non explicites.
+\end{block}
+
+\pause
+
+\textbf{Exemples}
+\begin{itemize}
+    \item Retrouver une personne
+    \item Localisation d'image
+\end{itemize}
+
+\pause
+
+\textbf{Compétences utiles}
+\begin{itemize}
+    \item Google dorks (filetype,...)
+    \item Conaissance de logiciels adaptés
+\end{itemize}
+
+\end{frame}
+
+%------------------
+
+\begin{comment}
+
+\begin{frame}
+\frametitle{Blocks of Highlighted Text}
+\begin{block}{Block 1}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+\end{block}
+
+\begin{block}{Block 2}
+Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
+\end{block}
+
+\begin{block}{Block 3}
+Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Multiple Columns}
+\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+
+\column{.45\textwidth} % Left column and width
+\textbf{Heading}
+\begin{enumerate}
+\item Statement
+\item Explanation
+\item Example
+\end{enumerate}
+
+\column{.5\textwidth} % Right column and width
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Table}
+\begin{table}
+\begin{tabular}{l l l}
+\toprule
+\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+\midrule
+Treatment 1 & 0.0003262 & 0.562 \\
+Treatment 2 & 0.0015681 & 0.910 \\
+Treatment 3 & 0.0009271 & 0.296 \\
+\bottomrule
+\end{tabular}
+\caption{Table caption}
+\end{table}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Theorem}
+\begin{theorem}[Mass--energy equivalence]
+$E = mc^2$
+\end{theorem}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+\frametitle{Verbatim}
+\begin{example}[Theorem Slide Code]
+\begin{verbatim}
+\begin{frame}
+\frametitle{Theorem}
+\begin{theorem}[Mass--energy equivalence]
+$E = mc^2$
+\end{theorem}
+\end{frame}\end{verbatim}
+\end{example}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Figure}
+Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
+%\begin{figure}
+%\includegraphics[width=0.8\linewidth]{test}
+%\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+\frametitle{Citation}
+An example of the \verb|\cite| command to cite within the presentation:\\~
+
+This statement requires citation \cite{p1}.
+\end{frame}
+
+\end{comment}
+
+%------------------------------------------------
+
+\section{Mise en pratique}
+
+\begin{frame}\frametitle{Mise en pratique}
+
+Inscrivez vous sur le site \textbf{45.147.99.10:8000} et créez un compte pour une équipe de 2 ou 3 personnes \\~\\
+
+Trouvez le plus de flag possible avant demain 18h et faites grimper votre équipe dans le classement \\~\\
+
+
+Les flags suivent le format $<$CPU...$>$ \\~\\
+
+Conseil : Faites des recherches internet
+
+
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{A titre indicatif}
+\fontsize{9}{12}\selectfont
+\begin{multicols}{3}
+%\begin{itemize}
+    Facile
+    \begin{itemize}
+        \item De beaux chats
+        \item Complètement décalé
+        \item Fonctio enjoyer
+        \item Top 10 Linux facts
+        \item Un dossier bizarre
+        \item Détournement d'avion
+    \end{itemize}
+    
+    
+    
+    Moyen
+    \begin{itemize}
+        \item L'attention du détail
+        \item Plusieurs alphabets
+        \item Mot de passe solide
+        \item Code obfusqué
+        \item Voyage voyage
+        \item Connexion admin
+        \item Il aurait pu se cacher le steg
+    \end{itemize}
+    
+    
+    Difficile
+    \begin{itemize}
+        \item Stagiaire mystérieux
+        \item Nouvel utilisateur
+        \item Site professionnel
+        \item Permutations
+    \end{itemize}
+    \hspace{10}
+
+
+%\end{itemize}
+\end{multicols}
+
+\end{frame}
+
+%------------------------------------------------
+
+\section{Plateformes et évènements}
+
+\begin{frame}\frametitle{Plateformes}
+    \begin{itemize}
+        \item root-me.org
+        \item picoCTF.org        
+        \item hackthebox.com
+        \item overthewire.org
+        \item ctftime.org
+    \end{itemize}
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Évènement}
+\begin{center}
+    \includegraphics[scale=1.5]{CSCBE.jpg}
+\end{center}
+
+\begin{itemize}
+    \item Compétition CTF inter-écoles belges\\
+    \item Par équipe de 4 (de la même école)\\
+    \item Du 10 au 11 mars 2023
+    \item Finales du 24 au 25 mars 2023
+\end{itemize}
+
+    
+\end{frame}
+
+{
+\setbeamercolor{background canvas}{bg=}
+\includepdf[pages=1]{CSCBE5-6.pdf}
+}
+%------------------------------------------------
+\section{Conseils généraux}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Conseils généraux}
+
+\begin{itemize}
+    \item Utilisez Linux (VM ou installation complète)
+    \pause
+    \item Perséverez et faites beaucoup de recherches
+    \pause
+    \item Avoir des connaissances générales dans tout les domaines de l'informatique (être polyvalent)
+    \pause
+    \item Prendre note des solutions des ctf qui pourront sans doute servir plus tard
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\section{Outils pratiques}
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Outils pratiques}
+
+\begin{multicols}{2}
+\begin{itemize}
+    \item Steganographie
+    \begin{itemize}
+        \item exiftool
+        \item steghide
+    \end{itemize}
+    \\~\\
+    \item Cryptographie
+    \begin{itemize}
+        \item dcode.fr
+        \item CyberChef
+    \end{itemize}
+    \\~\\
+    \item Réseau
+    \begin{itemize}
+        \item Wireshark
+        \item Nmap
+    \end{itemize}
+    
+    \item Forensic
+    \begin{itemize}
+        \item volatility
+    \end{itemize}
+    \\~\\
+    \item Reverse engineering
+    \begin{itemize}
+        \item Ghidra
+    \end{itemize}
+    \\~\\
+    \item OS Linux
+    \begin{itemize}
+        \item Kali
+        \item Parrot OS
+        \item Black Arch
+    \end{itemize}
+
+\end{itemize}
+\end{multicols}
+
+\end{frame}
+
+\end{document}
