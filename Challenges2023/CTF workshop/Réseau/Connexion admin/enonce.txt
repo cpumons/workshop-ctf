@@ -1,2 +1,0 @@
-Nous avons réussi a récupérer les paquets de connexion d'un admin d'un site ! 
-Le flag est son mot de passe formaté dans des balises <>

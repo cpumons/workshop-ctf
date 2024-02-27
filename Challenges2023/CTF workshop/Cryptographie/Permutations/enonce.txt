@@ -1,1 +1,0 @@
-J'ai trouvé cette méthode de chiffrement dans un livre, il était accompagné d'un message. Mais comme celui-ci est trop long et que je n'ai pas eu la chance d'avoir des cours de Programmation et Algorithmique, cela me prendrait des heures a résoudre. On m'a dit que tu savais résoudre les tours de Hanoï! :O Tu saurais décrypter le message ?
