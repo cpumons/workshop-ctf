@@ -1,0 +1,4 @@
+Pour convaincre un ami d'utiliser Linux, j'ai inspecté plusieurs sites web pour réunir les meilleurs raisons pour lesquelles Linux est meilleur que Windows.
+http://ctf.harbiinger.xyz/linux.html
+
+(Seules les pages de ctf.harbiinger.xyz font partie du CTF, le reste des pages du domaine sont celles de notre gentil ami hébergeur)

@@ -1,0 +1,1 @@
+J'ai créé un programme qui te dit si ton mot de passe est assez solide, teste le !

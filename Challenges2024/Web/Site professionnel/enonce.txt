@@ -1,0 +1,4 @@
+Mon ami a engagé un webmaster profesisonnel pour faire un site pour sa structure e-sport. Il est vraiment fort, il a utilisé du PHP ! Regarde ça 
+http://ctf.harbiinger.xyz
+
+(Seules les pages de ctf.harbiinger.xyz font partie du CTF, le reste des pages du domaine sont celles de notre gentil ami hébergeur)
