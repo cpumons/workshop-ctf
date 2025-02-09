@@ -1,0 +1,5 @@
+CPUMons a mis en ligne son nouveau site pour annoncer ses évènements. Nous avons besoin de votre aide pour vérifier que celui-ci est bien sécurisé afin d'éviter de se faire voler des données par nos rivaux de chez GPUMons.
+
+http://letmeadmin.ctf.cpumons.be/
+
+Le code source vous est donné.
