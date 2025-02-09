@@ -89,13 +89,13 @@
 
 \title[Capture The Flag]{Introduction à la cybersécurité via les Capture The Flag (CTF)} % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{Ugo Proietti et François Vion} % Your name
-\institute[UMONS] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\author{Anthony Debucquoy et François Vion} % Your name
+ \institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
-Universtité de Mons \\ % Your institution for the title page
+Université de Mons \\ % Your institution for the title page
 \medskip
 }
-\date[]{28 février 2023} % Date, can be changed to a custom date
+\date[]{10 février 2025} % Date, can be changed to a custom date
 
 \begin{document}
 
@@ -108,9 +108,7 @@ Universtité de Mons \\ % Your institution for the title page
 \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 \end{frame}
 
-%------------------------------------------------
-%	PRESENTATION SLIDES
-%------------------------------------------------
+
 
 %------------------------------------------------
 \section{Qu'est-ce qu'un CTF ?} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
@@ -168,7 +166,7 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. 
 
 \textbf{Compétences utiles}
 \begin{itemize}
-    \item Observation \\
+    \item Manipulation d'image ou d'audio \\
     \item Utilisation de scripts et d'outils\\
     \item Connaissance des divers formats de fichier
 \end{itemize}
@@ -188,7 +186,9 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. 
 
 \textbf{Exemples}
 \begin{itemize}
-    \item Cryptage et décryptage d'un message 
+    \item Chiffrement et déchiffrement d'un message
+    \item Exploiter des paramètres mal choisis
+    \item Crackage de mot de passe
 \end{itemize}
 
 \pause
@@ -196,7 +196,7 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. 
 \textbf{Compétences utiles}
 \begin{itemize}
     \item Connaissance de divers formats d'encodage
-    \item Connaissance de divers méthodes de cryptage et de décryptage
+    \item Connaissance de diverses méthodes de chiffrement
 \end{itemize}
 
 \end{frame}
@@ -217,7 +217,7 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. 
 \begin{itemize}
     \item Un message caché dans le code HTML
     \item Un lien sur le site qui mène à une ressource cachée
-    \item Un faille de sécurité dans un système de connexion
+    \item Une faille de sécurité dans un système de connexion
 \end{itemize}
 
 \pause
@@ -225,7 +225,8 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. 
 \textbf{Compétences utiles}
 \begin{itemize}
     \item Connaissance d'HTML, JavaScript et PHP
-    \item Connaissance de la structure d'un site web
+    \item Comprendre le back-end d'un site web
+    \item Utilisation d'outils de visualisation de requête
 \end{itemize}
 
 
@@ -245,15 +246,15 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. 
 \textbf{Exemples}
 \begin{itemize}
     \item Faille dans la méthode input() de Python 2
-    \item Contournement du mot de passe d'une application Android
     \item Problème de programmation "standard"
+    \item Automatisation d'attaque
 \end{itemize}
 
 \pause
 
 \textbf{Compétences utiles}
 \begin{itemize}
-    \item Maitrise de divers languages de programmation
+    \item Maitrise de divers langages de programmation
 \end{itemize}
 
 
@@ -273,6 +274,7 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. 
 \textbf{Exemple}
 \begin{itemize}
     \item Récupérer des identifiants de connexion en interceptant les paquets
+    \item Récupérer des fichiers échangés
 \end{itemize}
 
 \pause
@@ -292,7 +294,7 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. 
 \frametitle{Forensic}
 
 \begin{block}{Explication}
-    L'analyse forensic consiste a retrouver des infomations sur une machine qui a subit un accident. 
+    L'analyse forensic consiste à retrouver des informations sur une machine qui a subi un accident. 
 \end{block}
 
 \pause
@@ -307,9 +309,8 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. 
 
 \textbf{Compétences utiles}
 \begin{itemize}
-    \item Maitrise de divers formats d'encodage
-    \item Utilisation d'un outil d'analyse forensic
-    \item Connaissance de la structure de fichier d'un système
+    \item Utilisation d'outils d'analyse forensic
+    \item Connaissance approfondie de la structure de fichier d'un système
 \end{itemize}
 
 
@@ -321,7 +322,7 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. 
 \frametitle{Reverse Engineering}
 
 \begin{block}{Explication}
-    Le reverse engineering est le fait de décompiler un programme pour pouvoir voir son fonctionnement interne.
+    Le reverse engineering est le fait de décompiler un programme pour comprendre son fonctionnement interne.
 \end{block}
 
 \pause
@@ -330,13 +331,14 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. 
 \begin{itemize}
     \item Analyse du fonctionnement interne d'un programme pour en tirer des informations
     \item Modification du code source d'un programme
+    \item Contournement du mot de passe d'une application Android
 \end{itemize}
 
 \pause
 
 \textbf{Compétences utiles}
 \begin{itemize}
-    \item Maitrise de language machine et assembleur (C, x86, etc)
+    \item Maitrise de langage de bas niveau et assembleur  (C, x86, etc)
     \item Utilisation de décompilateurs
 \end{itemize}
 
@@ -365,111 +367,12 @@ Il existe un grand nombre de catégories ayant chacune leurs caractéristiques. 
 \textbf{Compétences utiles}
 \begin{itemize}
     \item Google dorks (filetype,...)
-    \item Conaissance de logiciels adaptés
+    \item Connaissance de logiciels adaptés
 \end{itemize}
 
 \end{frame}
 
-%------------------
 
-\begin{comment}
-
-\begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
-
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
-\end{enumerate}
-
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-
-\end{columns}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
-\end{frame}
-
-\end{comment}
 
 %------------------------------------------------
 
@@ -477,9 +380,9 @@ This statement requires citation \cite{p1}.
 
 \begin{frame}\frametitle{Mise en pratique}
 
-Inscrivez vous sur le site \textbf{45.147.99.10:8000} et créez un compte pour une équipe de 2 ou 3 personnes \\~\\
+Inscrivez-vous sur le site \textbf{ctf.cpumons.be} et créez un compte pour une équipe de 2 ou 3 personnes \\~\\
 
-Trouvez le plus de flag possible avant demain 18h et faites grimper votre équipe dans le classement \\~\\
+Trouvez le plus de flag possible avant demain 18h et faites grimper votre équipe dans le classement ! \\~\\
 
 
 Les flags suivent le format $<$CPU...$>$ \\~\\
@@ -493,7 +396,7 @@ Conseil : Faites des recherches internet
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{A titre indicatif}
+\frametitle{À titre indicatif}
 \fontsize{9}{12}\selectfont
 \begin{multicols}{3}
 %\begin{itemize}
@@ -508,7 +411,9 @@ Conseil : Faites des recherches internet
     \end{itemize}
     
     
-    
+    \\~\\
+    \\~\\
+
     Moyen
     \begin{itemize}
         \item L'attention du détail
@@ -518,15 +423,18 @@ Conseil : Faites des recherches internet
         \item Voyage voyage
         \item Connexion admin
         \item Il aurait pu se cacher le steg
+        \item Pipe it out
     \end{itemize}
-    
     
     Difficile
     \begin{itemize}
+        \item APK Trésor
+        \item Let me (adm)in
         \item Stagiaire mystérieux
         \item Nouvel utilisateur
         \item Site professionnel
         \item Permutations
+        \item Séquence secrète
     \end{itemize}
     \hspace{10}
 
@@ -545,6 +453,8 @@ Conseil : Faites des recherches internet
         \item root-me.org
         \item picoCTF.org        
         \item hackthebox.com
+        \item academy.hackthebox.com
+        \item tryhackme.com
         \item overthewire.org
         \item ctftime.org
     \end{itemize}
@@ -561,9 +471,9 @@ Conseil : Faites des recherches internet
 
 \begin{itemize}
     \item Compétition CTF inter-écoles belges\\
-    \item Par équipe de 4 (de la même école)\\
-    \item Du 10 au 11 mars 2023
-    \item Finales du 24 au 25 mars 2023
+    \item Par équipe de 4\\
+    \item Du 14 au 15 mars 2025
+    \item Finales du 28 au 29 mars 2025
 \end{itemize}
 
     
@@ -583,9 +493,9 @@ Conseil : Faites des recherches internet
 \begin{itemize}
     \item Utilisez Linux (VM ou installation complète)
     \pause
-    \item Perséverez et faites beaucoup de recherches
+    \item Persévérez et faites beaucoup de recherches
     \pause
-    \item Avoir des connaissances générales dans tout les domaines de l'informatique (être polyvalent)
+    \item Avoir des connaissances générales dans tous les domaines de l'informatique (être polyvalent)
     \pause
     \item Prendre note des solutions des ctf qui pourront sans doute servir plus tard
 \end{itemize}
@@ -600,7 +510,10 @@ Conseil : Faites des recherches internet
 \frametitle{Outils pratiques}
 
 \begin{multicols}{2}
+
 \begin{itemize}
+    \item ChatGPT ?
+    \\~\\
     \item Steganographie
     \begin{itemize}
         \item exiftool
@@ -618,21 +531,29 @@ Conseil : Faites des recherches internet
         \item Wireshark
         \item Nmap
     \end{itemize}
+
+    \\~\\
     
     \item Forensic
     \begin{itemize}
+        \item binwalk
+        \item hexdump
         \item volatility
     \end{itemize}
+
     \\~\\
+    
     \item Reverse engineering
     \begin{itemize}
         \item Ghidra
+        \item Cutter
     \end{itemize}
     \\~\\
     \item OS Linux
     \begin{itemize}
         \item Kali
         \item Parrot OS
+        \item Exegol
         \item Black Arch
     \end{itemize}
 
@@ -641,4 +562,4 @@ Conseil : Faites des recherches internet
 
 \end{frame}
 
-\end{document}
+\end{document} 
